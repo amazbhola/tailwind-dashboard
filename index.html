@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tailwind dashboard</title>
+    <link rel="stylesheet" href="./src/app.css">
+</head>
+
+<body class="bg-gray-100 min-h-full" >
+    <!-- Top Menu -->
+    <div class="h-16 bg-white shadow-sm pl-8 md:pl-80 w-full fixed flex top-0 px-8 left-0 items-center">
+        <!-- hambarg -->
+        <div class="w-6 cursor-pointer md:hidden" id="hambarg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </div>
+        <!-- Search -->
+        <div class="relative hidden md:block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 absolute top-2 cursor-pointer left-2 "
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text"
+                class="block w-72 shadow border-none rounded-3xl bg-gray-100 focus:outline-none py-2 text-base text-gray-600 pl-12 pr-4">
+        </div>
+        <div class="ml-auto items-center hidden md:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 hover:text-gray-900 cursor-pointer"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <div class="ml-4 relative">
+                <div class="cursor-pointer">
+                    <img id="dropdown" class="h-8 w-8 rounded-full object-cover "
+                        src="https://ui-avatars.com/api/?name=John+Doe" alt="">
+                </div>
+                <div id="dropdown_content"
+                    class="hidden absolute z-50 mt-2 bg-white right-0 w-48 py-1 rounded-md shadow-lg">
+                    <div class="px-4 py-2 text-xs text-gray-400">Manage Acount</div>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-gray-700 text-xs leading-5 transition"
+                        href="">Profile</a>
+                    <div class="border-t border-gray-200"></div>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-gray-700 text-xs leading-5 transition"
+                        href="">Logout</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- sidebar -->
+    <div id="sidebar" class=" fixed top-0 left-0 w-72 h-full bg-gray-800 shadow-md z-10 flex flex-col transition-all">
+
+        <div class="text-white text-base font-bold text-center uppercase bg-gray-900 h-16 py-5 relative">
+            Laravel
+            <!-- sidebar close icon -->
+            <svg id="sidebar_close" xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 top-4 md:hidden absolute block right-3 cursor-pointer" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <div class="flex flex-col justify-between flex-grow">
+            <div class="py-5 ">
+                <a href=""
+                    class="flex items-center my-1 px-4 py-3 text-white border-l-4 border-blue-600 bg-gray-900 transition border-transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    Dashboard
+                </a>
+                <a href=""
+                    class="flex items-center my-1 px-4 py-3 text-white border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-900 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    Menu one
+                </a>
+                <a href=""
+                    class="flex items-center my-1 px-4 py-3 text-white border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-900 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    Menu two
+                </a>
+                <a href=""
+                    class="flex items-center my-1 px-4 py-3 text-white border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-900 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    Menu three
+                </a>
+                <a href=""
+                    class="md:hidden flex items-center my-1 px-4 py-3 text-white border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-900 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    Logout
+                </a>
+            </div>
+            <div class="md:hidden block">
+                <div class="relative mx-5 mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 text-gray-500 absolute top-2 cursor-pointer left-2 " fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text"
+                        class="block w-full mx-auto shadow border-none rounded-3xl bg-gray-700 focus:outline-none py-2 text-base text-gray-200 pl-12 pr-4"
+                        placeholder="Search">
+
+
+                </div>
+                <div class="border-t border-gray-600 items-center flex py-4 px-5">
+                    <div class="cursor-pointer mr-4">
+                        <img class="h-8 w-8 rounded-full" src="https://ui-avatars.com/api/?name=John+Doe" alt="">
+                    </div>
+                    <a href="" class="text-gray-200 capitalize text-md ">John doe</a>
+                    <div class="ml-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-200 hover:text-gray-600 cursor-pointer" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-24 pl-8 md:pl-80 pr-8">
+        <h1 class="text-gray-700 text-3xl font-bold">Welcome to Dashboard</h1>
+    </div>
+    <script>
+        document.getElementById('dropdown').addEventListener('click', function () {
+            document.getElementById('dropdown_content').classList.toggle('hidden')
+        })
+        document.getElementById('hambarg').addEventListener('click',function(){
+            document.getElementById('sidebar').classList.add('active')
+        })
+        document.getElementById('sidebar_close').addEventListener('click',function(){
+            document.getElementById('sidebar').classList.remove('active')
+        })
+    </script>
+</body>
+
+</html>
