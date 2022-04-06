@@ -1,10 +1,17 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  // purge: ['./dist/*.html',],
+  purge: ['./src/*.html'],
+  mode:'jit',
   darkMode:false,
   content: ["./src/**/*.{html,js}",'*.{html,js}'],
   // content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins'],
+     }
+    },
   },
   plugins: [],
   variants:{
